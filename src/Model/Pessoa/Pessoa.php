@@ -28,19 +28,23 @@ abstract class Pessoa {
         $this->endereco = $endereco;
     }
     
-    public function recuperaCpf(){
+    public function recuperaCpf(): string
+    {
         return $this->cpf->recuperaNumero();
     }
 
-    public function recuperaNome(){
+    public function recuperaNome(): string
+    {
         return $this->nome;
     }
 
-    public function recuperaEndereco(){
+    public function recuperaEndereco(): object
+    {
         return $this->endereco;
     }
     
-    final private function validaNome(string $nome){
+    final private function validaNome(string $nome): void
+    {
         if (mb_strlen($nome) < 3){
             echo "Nome inválido. <br>";
             exit();

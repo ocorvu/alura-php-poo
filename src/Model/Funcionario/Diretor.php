@@ -16,12 +16,13 @@ class Diretor extends Funcionario implements Autenticavel
         $this->salario = 6000;
     }
 
-    public function calculaBonificacao()
+    public function calculaBonificacao(): float
     {
         return $this->salario * 2;
     }
 
-    public function podeAutenticar($senha) {
+    public function podeAutenticar($senha): bool
+    {
         return $senha === '1234';
     }
 }

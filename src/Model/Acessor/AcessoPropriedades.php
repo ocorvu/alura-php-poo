@@ -4,7 +4,8 @@ namespace Alura\Banco\Model\Acessor;
 
 trait AcessoPropriedades {
 
-    public function __get(string $nomeAtributo){
+    public function __get(string $nomeAtributo): string
+    {
 
         $metodo = 'recupera' . ucfirst($nomeAtributo);
 

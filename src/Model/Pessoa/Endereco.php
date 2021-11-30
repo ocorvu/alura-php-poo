@@ -29,23 +29,27 @@ final Class Endereco {
         $this->numero = $numero;
     }
 
-    public function recuperaCidade(){
+    public function recuperaCidade(): string
+    {
         return $this->cidade;
     }
 
-    public function recuperaBairro(){
+    public function recuperaBairro(): string
+    {
         return $this->bairro;
     }
 
-    public function recuperaRua(){
+    public function recuperaRua(): string
+    {
         return $this->rua;
     }
 
-    public function recuperaNumero(){
+    public function recuperaNumero(): string
+    {
         return $this->numero;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
     }
