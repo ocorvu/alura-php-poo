@@ -8,13 +8,12 @@ class BonificacaoController
 {
     private $totalBonificacoes = 0;
 
-    public function adicionaBonificacao(Funcionario $funcionario){
-        
+    public function adicionaBonificacao(Funcionario $funcionario): void
+    {
         $this->totalBonificacoes += $funcionario->calculaBonificacao();
     }
-
-    public function recuperaTotal(){
+    public function recuperaTotal(): float
+    {
         return $this->totalBonificacoes;
     }
-
 }

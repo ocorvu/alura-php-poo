@@ -4,7 +4,8 @@ namespace Alura\Banco\Model\Conta;
 
 class ContaCorrente extends Conta {
 
-    public function tranferir(Conta $contaDestino, float $valorATransferir){
+    public function tranferir(Conta $contaDestino, float $valorATransferir): void
+    {
         if ($valorATransferir > $this->recuperarSaldo()){
             echo "Saldo insuficiente <br>";
         } else {
@@ -15,7 +16,7 @@ class ContaCorrente extends Conta {
         }
     }
 
-    protected function percentualTarifa()
+    protected function percentualTarifa(): float
     {
         return 0.05;
     }

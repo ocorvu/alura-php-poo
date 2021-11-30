@@ -21,7 +21,7 @@ final class CPF
         $this->numero = $numero;
     }
 
-    public function recuperaNumero()
+    public function recuperaNumero(): string
     {
         return $this->numero;
     }

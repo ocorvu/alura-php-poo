@@ -22,9 +22,11 @@ abstract class Conta {
         self::$numeroDeContas--;
     }
 
-    public function sacar(float $valorASacar){
+    public function sacar(float $valorASacar): void
+    {
         $taxaSaque = $valorASacar * $this->percentualTarifa();
         $valorSaque = $valorASacar + $taxaSaque;
+
         if ($valorSaque > $this->recuperarSaldo()){
             echo "Saldo insuficiente. *Existe uma taxa de 5% para o saque. <br>";
         } else {
@@ -34,7 +36,8 @@ abstract class Conta {
         }
     }
 
-    public function depositar(float $valorADepositar){
+    public function depositar(float $valorADepositar): void
+    {
         if($valorADepositar < 0){
             echo "Valor de depósito inválido. <br>";
         } else {
@@ -44,28 +47,34 @@ abstract class Conta {
     }
 
 
-    public function recuperarSaldo(){
+    public function recuperarSaldo(): float
+    {
         return $this->saldo;
     }
 
-    public function recuperaNomeTitular(){
+    public function recuperaNomeTitular(): string
+    {
         return $this->titular->recuperaNome();
     }
 
-    public function recuperaCpfTitular(){
+    public function recuperaCpfTitular(): string
+    {
         return $this->titular->recuperaCpf();
     }
 
-    public function recuperaEnderecoTitular(){
+    public function recuperaEnderecoTitular(): object
+    {
         return $this->titular->recuperaEndereco();
     }
 
-    public function defineSaldo(float $valor){
+    public function defineSaldo(float $valor)
+    {
         $this->saldo = $valor;
     }
 
-    public static function recuperaNumeroDeContas(){
-        echo Conta::$numeroDeContas;
+    public static function recuperaNumeroDeContas(): float
+    {
+        return Conta::$numeroDeContas;
     }
     abstract protected function percentualTarifa();
 

@@ -16,11 +16,13 @@ abstract class Funcionario extends Pessoa {
         $this->salario = 1000;
     }
 
-    public function recuperaCargo(){
+    public function recuperaCargo(): string
+    {
         return $this->cargo;
     }
 
-    public function recuperaSalario(){
+    public function recuperaSalario(): float
+    {
         return $this->salario;
     }
 

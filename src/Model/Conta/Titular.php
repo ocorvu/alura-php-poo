@@ -14,7 +14,8 @@ class Titular extends Pessoa implements Autenticavel {
         parent::__construct($nome, $cpf, $endereco);
     }
 
-    public function podeAutenticar($senha) {
+    public function podeAutenticar($senha): bool
+    {
         return $senha === '1234';
     }
 
